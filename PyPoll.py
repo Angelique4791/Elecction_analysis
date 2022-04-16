@@ -1,21 +1,22 @@
 #The data we need to retrieve
+#Dependencies
 #Allows us to create file paths across operating systems
 import os
 #MOdule for reading file
 import csv
-
 # Assign a variable for the file to load and the path.
 elect_csvpath = os.path.join('Resources', 'election_results.csv')
-#print(csvpath)
+#print(elect_csvpath)
 #Assign variable to save the file to a path
-elect_report= os.path.join("election_analysis.txt")
-
+elect_report = os.path.join("analysis","election_analysis.txt")
+#print(elect_report)
+#Open the path and write to file
+open(elect_report,"w")
 #Read file Method1
 
 # Open the election results and read the file.
 with open(elect_csvpath) as election_data:
-    # Print the file object.
-
+    
     #Read file Method 2
     #Assign variable 
 
@@ -30,6 +31,7 @@ with open(elect_csvpath) as election_data:
     #Read and print header row
     headers = next(file_reader)
     print(headers)
+    #Print each row of data
     for row in file_reader:
         print(row)
     
