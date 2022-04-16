@@ -140,14 +140,8 @@ for county in counties_dict:
     print(counties_dict.get(county))
     
 #INCORRECT OUTPUT-----------------------------------------------------------------
-<<<<<<< HEAD
 
     #---------------------------------------------------------------------------------
-=======
-for county,voters in counties_dict:
-    print(county+" county has "+str(voters)+" registered voters.")
-#---------------------------------------------------------------------------------
->>>>>>> 7f38f522bbeae038a323d7300fba9512d780a66e
 for county_dict in voting_data:
     print(county_dict)
 for county_dict in voting_data:
@@ -176,3 +170,7 @@ now = datetime.datetime.now()
 #Print the present time.
 print("The present time is ",now)
 print("NOW'S THE TIME!!!")
+
+for x in range(2,7):
+    print(x)
+    
