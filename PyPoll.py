@@ -14,7 +14,8 @@ elect_report = os.path.join("analysis","election_analysis.txt")
 open(elect_report,"w")
 #TEST PRINT
 outfile = open(elect_report,"w")
-outfile.write("Hello World!")
+outfile.write("Counties in the Election\n--------------------------\n")
+outfile.write("Arapahoe\nDenver\nJefferson")
 outfile.close
 #Read file Method1
 
