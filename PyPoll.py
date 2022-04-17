@@ -17,30 +17,47 @@ outfile = open(elect_report,"w")
 outfile.write("Counties in the Election\n--------------------------\n")
 outfile.write("Arapahoe\nDenver\nJefferson")
 outfile.close
-#Read file Method1
 
+#1. Init a total vote counter
+total_votes = 0
+#2 candidate options and candidte votes
+candidate_options = []
+candidate_votes = {}
+
+#Read file Method1
 # Open the election results and read the file.
 with open(elect_csvpath) as election_data:
     
-    #Read file Method 2
-    #Assign variable 
-
-
-    #Assign variable to the file and load pathheaders = next(file_reader)
-    #file_to_load = 'Resources/election_results.csv'
-    #Open election results and read file
-
     #To do: perform analysis
     #Read the file with reader function
     file_reader = csv.reader(election_data)
     #Read and print header row
     headers = next(file_reader)
-    print(headers)
+    #print(headers)
     #Print each row of data
-    #for row in file_reader:
-        #print(row)
-    
+    for row in file_reader:
+        #2 Add to the total vote count
+        total_votes += 1
+        #Print candidate name from each row
+        candidate_name = row[2]
+        #Match exisiting candidates to exclude from list
+        if candidate_name not in candidate_options:
+            #1.Add candidate name to candidate list
+            candidate_options.append(candidate_name)
+            #2. Begin tracking candidate votes
+            candidate_votes[candidate_name] = 0
+        #3 Add vote to candidate's vote count
+        candidate_votes[candidate_name] += 1
 
+
+#Print candidate list
+print(candidate_options)
+
+#Print total_votes
+print(total_votes)
+
+#Print candidate vote dictionary
+print(candidate_votes)
 
 #1. The total number of votes cast
 #2. A complete list of candidates who received votes
