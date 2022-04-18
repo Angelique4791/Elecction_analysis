@@ -59,31 +59,24 @@ with open(elect_csvpath) as election_data:
             #2. Begin tracking candidate votes
             candidate_votes[candidate_name] = 0
     
-            #3 Add vote to candidate's vote count
-            candidate_votes[candidate_name] += 1
+        #3 Add vote to candidate's vote count
+        candidate_votes[candidate_name] += 1
     
-        #Determine percentage of the vote count
-        #1 Iterate through th candidate list
-        for candidate_name in candidate_votes:
-        
-            #2. Retrieve the vote count for a candidate
-            votes = candidate_votes[candidate_name]
-        
-            #3. Convert the integers to floating point deciaml and calculate the paercenctage of votes
-            vote_percentage = float(votes) / float(total_votes) * 100
+    #Determine percentage of the vote count
+    #1 Iterate through th candidate list
+    for candidate_name in candidate_votes:
+    
+        #2. Retrieve the vote count for a candidate
+        votes = candidate_votes[candidate_name]
+    
+        #3. Convert the integers to floating point deciaml and calculate the paercenctage of votes
+        vote_percentage = float(votes) / float(total_votes) * 100
         
         
         #4.Print the candidate name, percentage of votes, and total votes
         #print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
 
-        #Print each candidate's name, vount cote, and percentage of votes
-        #Print winning candidate summary
-        winning_candidate_summary = (
-            f"Winner: {winning_candidate}\n"
-            f"Winning Vote Count: {winning_count:,}\n"
-            f"Winning Percentage: {winning_percentage:.1f}%\n"
-            f"--------------------------\n")
-        print(winning_candidate_summary) 
+        
 
         
         #Determine winning vote count and candidate
@@ -97,6 +90,15 @@ with open(elect_csvpath) as election_data:
         
             #Set winning_candidate equal to candidate's name
             winning_candidate = candidate_name
+    #Print each candidate's name, vount cote, and percentage of votes
+    #Print winning candidate summary
+    winning_candidate_summary = (
+        f"Winner: {winning_candidate}\n"
+        f"Winning Vote Count: {winning_count:,}\n"
+        f"Winning Percentage: {winning_percentage:.1f}%\n"
+        f"--------------------------\n")  
+    print(winning_candidate_summary)
+    
         
             
 #Print candidate list
