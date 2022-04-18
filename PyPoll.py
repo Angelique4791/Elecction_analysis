@@ -13,10 +13,10 @@ elect_report = os.path.join("analysis","election_analysis.txt")
 #Open the path and write to file
 open(elect_report,"w")
 #TEST PRINT
-outfile = open(elect_report,"w")
-outfile.write("Counties in the Election\n--------------------------\n")
-outfile.write("Arapahoe\nDenver\nJefferson\n--------------------------")
-outfile.close
+#outfile = open(elect_report,"w")
+#outfile.write("Counties in the Election\n--------------------------\n")
+#outfile.write("Arapahoe\nDenver\nJefferson\n--------------------------")
+#outfile.close
 
 #1. Init a total vote counter
 total_votes = 0
@@ -92,30 +92,43 @@ with open(elect_csvpath) as election_data:
             winning_candidate = candidate_name
     #Print each candidate's name, vount cote, and percentage of votes
     #Print winning candidate summary
-    winning_candidate_summary = (
-        f"Winner: {winning_candidate}\n"
-        f"Winning Vote Count: {winning_count:,}\n"
-        f"Winning Percentage: {winning_percentage:.1f}%\n"
-        f"--------------------------\n")  
-    print(winning_candidate_summary)
-    
-        
+    #winning_candidate_summary = (
+        #f"Winner: {winning_candidate}\n"
+        #f"Winning Vote Count: {winning_count:,}\n"
+        #f"Winning Percentage: {winning_percentage:.1f}%\n"
+        #f"--------------------------\n")  
+    #print(winning_candidate_summary)
+
+#Add a vote to that candidate's count
+candidate_votes[candidate_name] += 1    
+
+#Save the results to our text file
+with open(elect_report, "w") as txt_file:
+
+    #Print the final vote to the terminal
+    #Print the final vote count to the terminal.
+    election_results = (
+        f"\nElection Results\n"
+        f"-------------------------\n"
+        f"Total Votes: {total_votes:,}\n"
+        f"-------------------------\n")
+    print(election_results)
+
+    #Save the final vote vount to the text file
+    txt_file.write(election_results)
+
             
-#Print candidate list
-#print(candidate_options)
+    #Print candidate list
+    #print(candidate_options)
 
-#Print total_votes
-#print(total_votes)
+    #Print total_votes
+    #print(total_votes)
 
-#Print candidate vote dictionary
-#print(candidate_votes)
+    #Print candidate vote dictionary
+    #print(candidate_votes)
 
 
 
-#1. The total number of votes cast
-#2. A complete list of candidates who received votes
-#3. The percentage of votes each candidate won
-#4. The total number of votes each canididate won
-#5. The winner of the election based on popular vote
-#!TEST!##!REMOVE!#
-print("Have a good day!")
+
+    #!TEST!##!REMOVE!#
+    #print("Have a good day!")
