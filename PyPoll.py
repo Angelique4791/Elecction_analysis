@@ -11,7 +11,7 @@ elect_csvpath = os.path.join('Resources', 'election_results.csv')
 elect_report = os.path.join("analysis","election_analysis.txt")
 #print(elect_report)
 #Open the path and write to file
-open(elect_report,"w")
+#open(elect_report,"w")
 #TEST PRINT
 #outfile = open(elect_report,"w")
 #outfile.write("Counties in the Election\n--------------------------\n")
@@ -61,7 +61,21 @@ with open(elect_csvpath) as election_data:
     
         #3 Add vote to candidate's vote count
         candidate_votes[candidate_name] += 1
+#Save the results to our text file
+with open(elect_report, "w") as txt_file:
+
+    #Print the final vote to the terminal
+    #Print the final vote count to the terminal.
+    election_results = (
+        f"\nElection Results\n"
+        f"-------------------------\n"
+        f"Total Votes: {total_votes:,}\n"
+        f"-------------------------\n")
+    print(election_results, end="")
+
     
+    #Save the final vote vount to the text file
+    txt_file.write(election_results)    
     #Determine percentage of the vote count
     #1 Iterate through th candidate list
     for candidate_name in candidate_votes:
@@ -71,13 +85,13 @@ with open(elect_csvpath) as election_data:
     
         #3. Convert the integers to floating point deciaml and calculate the paercenctage of votes
         vote_percentage = float(votes) / float(total_votes) * 100
+        candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
         
-        
-        #4.Print the candidate name, percentage of votes, and total votes
-        #print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+        #Print each cndidate's voter count and percentage to the terminal
+        print(candidate_results)
 
-        
-
+        #  Save the candidate results to our text file.
+        txt_file.write(candidate_results)
         
         #Determine winning vote count and candidate
         #Dertermine is the vote count is greater that the winning count
@@ -92,43 +106,29 @@ with open(elect_csvpath) as election_data:
             winning_candidate = candidate_name
     #Print each candidate's name, vount cote, and percentage of votes
     #Print winning candidate summary
-    #winning_candidate_summary = (
-        #f"Winner: {winning_candidate}\n"
-        #f"Winning Vote Count: {winning_count:,}\n"
-        #f"Winning Percentage: {winning_percentage:.1f}%\n"
-        #f"--------------------------\n")  
-    #print(winning_candidate_summary)
-
-#Add a vote to that candidate's count
-candidate_votes[candidate_name] += 1    
-
-#Save the results to our text file
-with open(elect_report, "w") as txt_file:
-
-    #Print the final vote to the terminal
-    #Print the final vote count to the terminal.
-    election_results = (
-        f"\nElection Results\n"
-        f"-------------------------\n"
-        f"Total Votes: {total_votes:,}\n"
-        f"-------------------------\n")
-    print(election_results)
+    winning_candidate_summary = (
+        f"Winner: {winning_candidate}\n"
+        f"Winning Vote Count: {winning_count:,}\n"
+        f"Winning Percentage: {winning_percentage:.1f}%\n"
+        f"--------------------------\n")  
+    print(winning_candidate_summary)
 
     #Save the final vote vount to the text file
-    txt_file.write(election_results)
-
-            
-    #Print candidate list
-    #print(candidate_options)
-
-    #Print total_votes
-    #print(total_votes)
-
-    #Print candidate vote dictionary
-    #print(candidate_votes)
+    txt_file.write(candidate_results)
 
 
+        
+#Print candidate list
+#print(candidate_options)
+
+#Print total_votes
+#print(total_votes)
+
+#Print candidate vote dictionary
+#print(candidate_votes)
 
 
-    #!TEST!##!REMOVE!#
-    #print("Have a good day!")
+
+
+#!TEST!##!REMOVE!#
+#print("Have a good day!")
