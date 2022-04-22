@@ -4,11 +4,15 @@
 import os
 #MOdule for reading file
 import csv
+
+location =os.getcwd()
+print(location) 
 # Assign a variable for the file to load and the path.
-elect_csvpath = os.path.join('Resources', 'election_results.csv')
+elect_csvpath = os.path.join('election_results.csv')
+
 #print(elect_csvpath)
 #Assign variable to save the file to a path
-elect_report = os.path.join("analysis","election_analysis.txt")
+elect_report = os.path.join("election_analysis.txt")
 #print(elect_report)
 #Open the path and write to file
 #open(elect_report,"w")
@@ -43,6 +47,7 @@ with open(elect_csvpath) as election_data:
     
     #Read and print header row
     headers = next(file_reader)
+ 
     
     #print(headers)
     #print(headers)
@@ -51,7 +56,7 @@ with open(elect_csvpath) as election_data:
     for row in file_reader:
     
         #2 Add to the total vote count
-        total_votes += 1
+        total_votes = total_votes+1
     
         #Print candidate name from each row
         candidate_name = row[2]
@@ -116,7 +121,22 @@ with open(elect_report, "w") as txt_file:
         #  Save the candidate results to our text file.
         txt_file.write(candidate_results)
 
-    
+  ###############################################0421 Session with Dahoon#############################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     #Determine percentage of county votes as percentage of whole
     #1 Iterate through th candidate list

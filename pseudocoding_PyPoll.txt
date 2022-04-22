@@ -128,3 +128,22 @@ code fix 2
         txt_file.write(county_results)
 
 ======================================================================================
+code fix 3
+
+
+#Determine percentage of county votes as percentage of whole
+    #1 Iterate through th candidate list
+    for county_name in county_vote_cast:
+    
+        #2. Retrieve the total vote count for a county
+        tot_county_vote = county_vote_cast[county_name]
+    
+        #3. Convert the integers to floating point deciaml and calculate the paercenctage of votes
+        county_percentage = float(tot_county_vote) / float(total_votes) * 100
+        county_results = (f"{county_name}: {county_percentage:.1f}% ({tot_county_vote:,})\n")
+        
+        #Print each county's voter count and percentage to the terminal
+        print(county_results)
+
+        #  Save the county results to our text file.
+        txt_file.write(county_results)
