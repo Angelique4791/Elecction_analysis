@@ -12,7 +12,7 @@ elect_csvpath = os.path.join('election_results.csv')
 
 #print(elect_csvpath)
 #Assign variable to save the file to a path
-elect_report = os.path.join("analysis\election_analysis.txt")
+elect_report = os.path.join('analysis\election_analysis.txt')
 #print(elect_report)
 #Open the path and write to file
 #open(elect_report,"w")
@@ -100,6 +100,7 @@ with open(elect_csvpath) as election_data:
             f"Total Votes: {total_votes:,}\n"
             f"-------------------------\n")
         print(election_results, end="")
+        print("\n")
 
         #Save the final vote vount to the text file
         txt_file.write(election_results) 
@@ -132,7 +133,7 @@ with open(elect_csvpath) as election_data:
             largest_county_turnout = county_name
         #  7: Print the county with the largest turnout to the terminal.
         largest_county_turnout = (
-            f"\n-------------------------\n"
+            f"-------------------------\n"
             f"Largest County Turnout: {largest_county_turnout}\n"
             f"-------------------------\n")
         print(largest_county_turnout)
