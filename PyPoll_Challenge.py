@@ -5,10 +5,10 @@ import os
 #MOdule for reading file
 import csv
 
-location =os.getcwd()
-print(location) 
+#location =os.getcwd()
+#print(location) 
 # Assign a variable for the file to load and the path.
-elect_csvpath = os.path.join('election_results.csv')
+elect_csvpath = os.path.join('Resources\election_results.csv')
 
 #print(elect_csvpath)
 #Assign variable to save the file to a path
@@ -98,9 +98,10 @@ with open(elect_csvpath) as election_data:
             f"\nElection Results\n"
             f"-------------------------\n"
             f"Total Votes: {total_votes:,}\n"
-            f"-------------------------\n")
-        print(election_results, end="")
-        print("\n")
+            f"-------------------------\n"
+            f"\nCounty Votes:")
+        print(election_results)
+        
 
         #Save the final vote vount to the text file
         txt_file.write(election_results) 
@@ -115,7 +116,7 @@ with open(elect_csvpath) as election_data:
         
             #3. Convert the integers to floating point deciaml and calculate the paercenctage of votes
             county_percentage = float(tot_county_vote) / float(total_votes) * 100
-            county_results = (f"{county_name}: {county_percentage:.1f}% ({tot_county_vote:,})\n")
+            county_results = (f"{county_name}: {county_percentage:.1f}% ({tot_county_vote:,})")
             
             #Print each county's voter count and percentage to the terminal
             print(county_results)
@@ -149,7 +150,7 @@ with open(elect_csvpath) as election_data:
         
             #3. Convert the integers to floating point deciaml and calculate the paercenctage of votes
             vote_percentage = float(votes) / float(total_votes) * 100
-            candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+            candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})")
             
             #Print each cndidate's voter count and percentage to the terminal
             print(candidate_results)
