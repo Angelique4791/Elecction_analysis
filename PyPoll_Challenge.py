@@ -118,12 +118,12 @@ with open(elect_csvpath) as election_data:
             county_percentage = float(tot_county_vote) / float(total_votes) * 100
             county_results = (f"{county_name}: {county_percentage:.1f}% ({tot_county_vote:,})")
             
-            #Print each county's voter count and percentage to the terminal
-            print(county_results)
-            
+        #Print each county's voter count and percentage to the terminal
+        print(county_results)
+        
 
-            #  Save the county results to our text file.
-            txt_file.write(county_results)
+        #  Save the county results to our text file.
+        txt_file.write(county_results)
 
         print("\n")
         txt_file.write("\n")
@@ -132,14 +132,17 @@ with open(elect_csvpath) as election_data:
         if (tot_county_vote > largest_vote_count):
             largest_county_vote = tot_county_vote
             largest_county_turnout = county_name
+        
+            
+
         #  7: Print the county with the largest turnout to the terminal.
-        largest_county_turnout = (
+        largest_county_results = (
             f"-------------------------\n"
             f"Largest County Turnout: {largest_county_turnout}\n"
             f"-------------------------\n")
-        print(largest_county_turnout)
+        print(largest_county_results)
         # 8: Save the county with the largest turnout to a text file.
-        txt_file.write(largest_county_turnout)
+        txt_file.write(largest_county_results)
         
         #Determine percentage of the vote count
         #1 Iterate through th candidate list
