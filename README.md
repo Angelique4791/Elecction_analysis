@@ -54,3 +54,5 @@ o Denver county cast 82.8% of the vote.
 o Jefferson county cast 10.5% of the vote.
 - Denver county had the highest turnout with 306,055 total votes and 82.8% of the total vote.
 
+[election_analysis.txt](https://github.com/Angelique4791/Elecction_analysis/blob/main/analysis/election_analysis.txt)
+
