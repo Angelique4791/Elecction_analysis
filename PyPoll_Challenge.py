@@ -28,6 +28,7 @@ counties_voting = []
 county_vote_cast = {}
 largest_county_turnout = ""
 largest_vote_count = 0
+largest_vote_percent = 0 
 
 #Read file Method1
 # Open the election results and read the file.
@@ -114,11 +115,12 @@ with open(elect_csvpath) as election_data:
             txt_file.write(f'{county_results}\n')
       
 
-        # 6f: Write an if statement to determine the winning county and get its vote count.
-        if (tot_county_vote > largest_vote_count):
-            largest_county_vote = tot_county_vote
-            largest_county_turnout = county_name
-        #print(largest_county_turnout)
+            # 6f: Write an if statement to determine the winning county and get its vote count.
+            if (tot_county_vote > largest_vote_count and county_percentage > largest_vote_percent):
+                
+                largest_county_vote = tot_county_vote
+                largest_vote_percent = county_percentage
+                largest_county_turnout = county_name
             
 
         #  7: Print the county with the largest turnout to the terminal.
