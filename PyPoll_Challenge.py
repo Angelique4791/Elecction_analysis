@@ -6,22 +6,13 @@ import os
 #MOdule for reading file
 import csv
 
-#location =os.getcwd()
-#print(location) 
+ 
 # Assign a variable for the file to load and the path.
 elect_csvpath = os.path.join('Resources\election_results.csv')
 
-#print(elect_csvpath)
 #Assign variable to save the file to a path
 elect_report = os.path.join('analysis\election_analysis.txt')
-#print(elect_report)
-#Open the path and write to file
-#open(elect_report,"w")
-#TEST PRINT
-#outfile = open(elect_report,"w")
-#outfile.write("Counties in the Election\n--------------------------\n")
-#outfile.write("Arapahoe\nDenver\nJefferson\n--------------------------")
-#outfile.close
+
 
 #1. Init a total vote counter
 total_votes = 0
@@ -50,10 +41,7 @@ with open(elect_csvpath) as election_data:
     headers = next(file_reader)
  
     
-    #print(headers)
-    #print(headers)
-    
-    #Print each row of data
+    # Print each row of data
     for row in file_reader:
     
         #2 Add to the total vote count
@@ -93,7 +81,6 @@ with open(elect_csvpath) as election_data:
     #Save the results to our text file
     with open(elect_report, "w") as txt_file:
 
-        #Print the final vote to the terminal
         #Print the final vote count to the terminal.
         election_results = (
             f"\nElection Results\n"
@@ -162,11 +149,8 @@ with open(elect_csvpath) as election_data:
             #  Save the candidate results to our text file.
             txt_file.write(f'{candidate_results}\n')
         
-  ############################################### 5-18-22 ABOVE WORKS CORRECTLY #############################
-
-
             #Determine winning vote count and candidate
-            #Dertermine is the vote count is greater that the winning count
+            #Dertermine if the vote count is greater that the winning count
             if (votes > winning_count) and (vote_percentage > winning_percentage):
             
                 #If true: set winning_count = votes and 
@@ -195,18 +179,6 @@ with open(elect_csvpath) as election_data:
         
 
 
-        
-#Print candidate list
-#print(candidate_options)
-
-#Print total_votes
-#print(total_votes)
-
-#Print candidate vote dictionary
-# print(candidate_votes)
-
-
 close
 
-    #!TEST!##!REMOVE!#
-    #print("Have a good day!")
+   
