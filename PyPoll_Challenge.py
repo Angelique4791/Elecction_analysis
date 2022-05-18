@@ -1,6 +1,7 @@
 #The data we need to retrieve
 #Dependencies
 #Allows us to create file paths across operating systems
+from fileinput import close
 import os
 #MOdule for reading file
 import csv
@@ -99,7 +100,7 @@ with open(elect_csvpath) as election_data:
             f"-------------------------\n"
             f"Total Votes: {total_votes:,}\n"
             f"-------------------------\n"
-            f"\nCounty Votes:")
+            f"\nCounty Votes:\n")
         print(election_results)
         
 
@@ -118,31 +119,29 @@ with open(elect_csvpath) as election_data:
             county_percentage = float(tot_county_vote) / float(total_votes) * 100
             county_results = (f"{county_name}: {county_percentage:.1f}% ({tot_county_vote:,})")
             
-        #Print each county's voter count and percentage to the terminal
-        print(county_results)
+            #Print each county's voter count and percentage to the terminal
+            print(f'{county_results}\n')
         
 
-        #  Save the county results to our text file.
-        txt_file.write(county_results)
-
-        print("\n")
-        txt_file.write("\n")
+             #  Save the county results to our text file.
+            txt_file.write(f'{county_results}\n')
+      
 
         # 6f: Write an if statement to determine the winning county and get its vote count.
         if (tot_county_vote > largest_vote_count):
             largest_county_vote = tot_county_vote
             largest_county_turnout = county_name
-        
+        #print(largest_county_turnout)
             
 
         #  7: Print the county with the largest turnout to the terminal.
         largest_county_results = (
-            f"-------------------------\n"
+            f"\n-------------------------\n"
             f"Largest County Turnout: {largest_county_turnout}\n"
             f"-------------------------\n")
-        print(largest_county_results)
+        print(f'{largest_county_results}\n')
         # 8: Save the county with the largest turnout to a text file.
-        txt_file.write(largest_county_results)
+        txt_file.write(f'{largest_county_results}\n')
         
         #Determine percentage of the vote count
         #1 Iterate through th candidate list
@@ -153,40 +152,32 @@ with open(elect_csvpath) as election_data:
         
             #3. Convert the integers to floating point deciaml and calculate the paercenctage of votes
             vote_percentage = float(votes) / float(total_votes) * 100
-            candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})")
+            candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
             
             #Print each cndidate's voter count and percentage to the terminal
-            print(candidate_results)
+            print(f'{candidate_results}\n')
 
             
 
             #  Save the candidate results to our text file.
-            txt_file.write(candidate_results)
-        print("\n")
-        txt_file.write("\n")
-  ###############################################0421 Session with Dahoon#############################
-
-
-
-
-
-
-
+            txt_file.write(f'{candidate_results}\n')
         
-        
-        #Determine winning vote count and candidate
-        #Dertermine is the vote count is greater that the winning count
-        if (votes > winning_count) and (vote_percentage > winning_percentage):
-        
-            #If true: set winning_count = votes and 
-            winning_percentage = vote_percentage
-            winning_count = votes
-            winning_percentage = vote_percentage
+  ############################################### 5-18-22 ABOVE WORKS CORRECTLY #############################
 
 
-        
-            #Set winning_candidate equal to candidate's name
-            winning_candidate = candidate_name
+            #Determine winning vote count and candidate
+            #Dertermine is the vote count is greater that the winning count
+            if (votes > winning_count) and (vote_percentage > winning_percentage):
+            
+                #If true: set winning_count = votes and 
+                winning_percentage = vote_percentage
+                winning_count = votes
+                winning_percentage = vote_percentage
+
+
+            
+                #Set winning_candidate equal to candidate's name
+                winning_candidate = candidate_name
         
         
         #Print each candidate's name, vount cote, and percentage of votes
@@ -196,6 +187,7 @@ with open(elect_csvpath) as election_data:
             f"\nWinning Vote Count: {winning_count:,}\n--------------------------"
             f"\nWinning Percentage: {winning_percentage:.1f}%\n"
             f"--------------------------\n")  
+        
         print(winning_candidate_summary)
 
         #Save the final vote vount to the text file
@@ -211,10 +203,10 @@ with open(elect_csvpath) as election_data:
 #print(total_votes)
 
 #Print candidate vote dictionary
-#print(candidate_votes)
+# print(candidate_votes)
 
 
-
+close
 
     #!TEST!##!REMOVE!#
     #print("Have a good day!")

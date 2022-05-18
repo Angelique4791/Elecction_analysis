@@ -1,6 +1,7 @@
 #The data we need to retrieve
 #Dependencies
 #Allows us to create file paths across operating systems
+from fileinput import close
 import os
 #MOdule for reading file
 import csv
@@ -117,6 +118,7 @@ with open(elect_report, "w") as txt_file:
     #Save the final vote vount to the text file
     txt_file.write(candidate_results)
 
+close
 
         
 #Print candidate list
