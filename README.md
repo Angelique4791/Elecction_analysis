@@ -22,15 +22,15 @@ The analysis of the election data show that:
 
 - There were 369,711 votes cast in the election.
 - The candidates were:
-o Dianna DeGette
-o Raymon Anthony Doane
-o Charles Casper Stockham
+  - Dianna DeGette
+  - Raymon Anthony Doane
+  - Charles Casper Stockham
 - The candidate results were:
-o Dianna DeGette received 73.8% of the vote and 272,892 total votes.
-o Raymon Anthony Doane received 3.1% of the vote and 11,606 total votes.
-o Charles Casper Stockham received 23.0% of the vote and 85,213 total votes.
+  - Dianna DeGette received 73.8% of the vote and 272,892 total votes.
+  - Raymon Anthony Doane received 3.1% of the vote and 11,606 total votes.
+  - Charles Casper Stockham received 23.0% of the vote and 85,213 total votes.
 - The winner of the election was:
-o Dianna Degette, receiving 73.8% of the vote and 272,892 total votes.
+  - Dianna Degette, receiving 73.8% of the vote and 272,892 total votes.
 
 ## Challenge Overview
 
@@ -45,13 +45,13 @@ The Colorado Board of Elections asked for additional information regarding the c
 The analysis of the election data show that:
 
 - The voter turnout for each county was:
-o Arapahoe county cast 24,801 votes.
-o Denver county cast 306,055 votes.
-o Jefferson county cast 38,855 votes.
+  - Arapahoe county cast 24,801 votes.
+  - Denver county cast 306,055 votes.
+  - Jefferson county cast 38,855 votes.
 - The percentage of votes by county were:
-o Arapahoe county cast 6.7% of the vote.
-o Denver county cast 82.8% of the vote.
-o Jefferson county cast 10.5% of the vote.
+  - Arapahoe county cast 6.7% of the vote.
+  - Denver county cast 82.8% of the vote.
+  - Jefferson county cast 10.5% of the vote.
 - Denver county had the highest turnout with 306,055 total votes and 82.8% of the total vote.
 
 [election_analysis.txt](https://github.com/Angelique4791/Elecction_analysis/blob/main/analysis/election_analysis.txt)
